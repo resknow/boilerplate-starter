@@ -1,0 +1,77 @@
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font;
+    font-weight: $heading-font-weight;
+    line-height: 1;
+
+    &.sub-title {
+        color: $grey;
+    }
+}
+
+h1,
+.h1 {
+    font-size: 2.8rem;
+}
+h2,
+.h2 {
+    font-size: 2.2rem;
+}
+h3,
+.h3 {
+    font-size: 1.8rem;
+}
+h4,
+.h4 {
+    font-size: 1.5rem;
+}
+h5,
+.h5 {
+    font-size: 1.4rem;
+}
+h6,
+.h6 {
+    font-size: 1.3rem;
+}
+
+/* Paragraphs */
+p,
+ul {
+    line-height: 1.55;
+    margin-top: .9rem;
+    margin-bottom: .9rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    // Sizes
+    &.xl {
+        font-size: 1.4em;
+    }
+
+    &.lg,
+    &.lead {
+        font-size: 1.2em;
+    }
+
+    &.md {
+        font-size: 1.1em;
+    }
+
+    &.sm {
+        font-size: .85em;
+    }
+
+    &.xs {
+        font-size: .75em;
+    }
+}

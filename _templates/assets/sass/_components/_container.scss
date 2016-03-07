@@ -1,0 +1,96 @@
+/**
+ * Container
+ *
+ * Centralised container, normally used
+ * for centering the page or content.
+ *
+ * @TODO:
+ * - Make container keyword values customisable.
+ */
+
+/**
+ * @mixin: Container
+ *
+ * $width: CSS Value or Keyword (xs, sm, md, lg, xl) (defaults to max-width value of $container-lg)
+ * $align: left, center. (defaults to center)
+ */
+@mixin container($width: lg, $align: center) {
+
+    // Alignments
+    @if $align == 'center' {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    // Set Width
+    @if $width == 'xs' {
+        $width: $container-xs;
+    } @elseif $width == 'sm' {
+        $width: $container-sm;
+    } @elseif $width == 'md' {
+        $width: $container-md;
+    } @elseif $width == 'lg' {
+        $width: $container-lg;
+    } @elseif $width == 'xl' {
+        $width: $container-xl;
+    }
+
+    // Width
+    max-width: $width;
+
+}
+
+/* Default Container (Large) */
+.container {
+    @include container;
+
+    // Align left
+    &.align-left {
+        @include container($align: left);
+    }
+
+    // Extra Small
+    &.xs {
+        @include container(xs);
+
+        &.align-left {
+            @include container(xs, left);
+        }
+    }
+
+    // Small
+    &.sm {
+        @include container(sm);
+
+        &.align-left {
+            @include container(sm, left);
+        }
+    }
+
+    // Medium
+    &.md {
+        @include container(md);
+
+        &.align-left {
+            @include container(md, left);
+        }
+    }
+
+    // Large (Defaults to this size)
+    &.lg {
+        @include container(lg);
+
+        &.align-left {
+            @include container(lg, left);
+        }
+    }
+
+    // Extra Large
+    &.xl {
+        @include container(xl);
+
+        &.align-left {
+            @include container(xl, left);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+/**
+ * Code
+ */
+code,
+pre {
+    background-color: lighten($faded-grey, 3%);
+    border-radius: 2px;
+    color: $blue;
+    font-family: $monospace-font;
+    font-size: 1.3rem;
+    display: inline-block;
+    line-height: 1;
+    padding: .45rem .8rem;
+}
+
+pre {
+    color: $dark-grey;
+    display: block;
+    line-height: 1.6;
+    padding: 1.4rem;
+}

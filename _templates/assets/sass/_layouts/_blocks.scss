@@ -1,0 +1,70 @@
+/**
+ * Blocks
+ */
+%blocks {
+    @include outer-container;
+}
+
+%blocks-2 {
+    @extend %blocks;
+    margin-top: 2.4rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include mq(sm) {
+        .block {
+            @include span-columns(6);
+            @include omega(2n);
+        }
+    }
+}
+
+%blocks-3 {
+    @extend %blocks;
+    margin-top: 2.4rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include mq(sm) {
+        .block {
+            @include span-columns(4);
+            @include omega(3n);
+        }
+    }
+}
+
+%blocks-4 {
+    @extend %blocks;
+    margin-top: 2.4rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include mq(sm) {
+        .block {
+            @include span-columns(3);
+            @include omega(4n);
+        }
+    }
+}
+
+%blocks-6 {
+    @extend %blocks;
+    margin-top: 2.4rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+    
+    @include mq(sm) {
+        .block {
+            @include span-columns(2);
+            @include omega(6n);
+        }
+    }
+}

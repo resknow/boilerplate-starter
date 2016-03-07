@@ -1,0 +1,13 @@
+{
+    "config": {
+        "vendor-dir": "_includes/vendor"
+    },
+    "autoload": {
+        "psr-0": {
+            "BP": "_includes/core/classes/"
+        }
+    },
+    "require": {
+        "mustangostang/spyc": "^0.5.1"
+    }
+}

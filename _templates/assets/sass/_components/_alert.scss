@@ -1,0 +1,119 @@
+/**
+ * Alert
+ *
+ * Styled element for displaying
+ * prominent messages.
+ */
+
+/**
+ * @mixin Alert
+ */
+@mixin alert() {
+    background-color: $faded-grey;
+    border-radius: $br;
+    color: $black;
+    padding: 1.4rem;
+    position: relative;
+
+    .close {
+        color: rgba($black, .4);
+        font-size: 1.5em;
+        padding: .4em .8em;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:after {
+            content: "\00d7";
+        }
+
+        &:hover {
+            color: rgba($black, .8);
+        }
+    }
+
+    &.basic {
+        background-color: transparent;
+        border: 1px solid $faded-grey;
+        color: $dark-grey;
+    }
+
+    &.pronounced {
+        background-color: transparent;
+        border: 2px solid $faded-grey;
+        color: $dark-grey;
+        font-weight: 600;
+    }
+}
+
+.alert {
+    @include alert;
+
+    &.primary {
+        background-color: $primary;
+        color: auto-color($primary);
+    }
+
+    &.accent {
+        background-color: $accent;
+        color: auto-color($accent);
+    }
+
+    &.blue,
+    &.neutral {
+        background-color: $blue;
+        color: auto-color($blue);
+    }
+
+    &.red,
+    &.negative,
+    &.danger,
+    &.error {
+        background-color: $red;
+        color: auto-color($red);
+    }
+
+    &.green,
+    &.positive,
+    &.success {
+        background-color: $green;
+        color: auto-color($green);
+    }
+
+    &.yellow,
+    &.warning {
+        background-color: $yellow;
+        color: auto-color($yellow);
+    }
+
+    &.black {
+        background-color: $black;
+        color: auto-color($black);
+    }
+
+    &.dark-grey {
+        background-color: $dark-grey;
+        color: auto-color($dark-grey);
+    }
+
+    &.grey {
+        background-color: $grey;
+        color: auto-color($grey);
+    }
+
+    &.light-grey {
+        background-color: $light-grey;
+        color: auto-color($light-grey);
+    }
+
+    &.faded-grey {
+        background-color: $faded-grey;
+        color: auto-color($faded-grey);
+    }
+
+    &.white {
+        background-color: $white;
+        color: auto-color($white);
+    }
+
+}

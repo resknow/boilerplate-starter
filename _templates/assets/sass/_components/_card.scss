@@ -1,0 +1,191 @@
+/**
+ * Card
+ *
+ * Display content in a card
+ * based style.
+ */
+
+/**
+ * @mixin: Card
+ */
+@mixin card($raise: false) {
+    background-color: $white;
+    border: 1px solid $faded-grey;
+    border-radius: $br;
+    overflow: hidden;
+    position: relative;
+    margin-top: 2.4rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &[disabled],
+    &.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    > .title {
+        border-bottom: 1px solid $faded-grey;
+        font-size: 1.7rem;
+        padding: 1.3rem 2.4rem;
+    }
+
+    > .image,
+    > .media,
+    > .map {
+        margin-top: -1rem;
+
+        > img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    > .map {
+        height: 16rem;
+
+        @include mq(sm) {
+            height: 19rem;
+        }
+
+        @include mq(md) {
+            height: 26rem;
+        }
+    }
+
+    > .content {
+        padding: 2.4rem;
+
+        + .content {
+            border-top: 1px solid $faded-grey;
+        }
+
+        > .title {
+            font-size: 1.7rem;
+            margin-bottom: .8rem;
+
+            + .sub-title {
+                margin-top: -.8rem;
+            }
+        }
+
+        > .sub-title {
+            color: $light-grey;
+            font-weight: 400;
+            margin-bottom: .8rem;
+        }
+    }
+
+    // Header
+    > .header {
+        background-color: lighten($faded-grey, 5%);
+        border-bottom: 1px solid $faded-grey;
+        padding: 1.3rem 2.4rem;
+
+        > .title {
+            font-size: 1.7rem;
+        }
+
+        > .sub-title {
+            color: $light-grey;
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+    }
+
+    // Footer
+    > .footer {
+        background-color: lighten($faded-grey, 5%);
+        border-top: 1px solid $faded-grey;
+        font-size: .9em;
+        padding: 1.3rem 2.4rem;
+    }
+
+    // Close Button
+    .close {
+        color: rgba(black, .4);
+        font-size: 1.5em;
+        padding: .4em .8em;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        &:after {
+            content: "\00d7";
+        }
+
+        &:hover {
+            color: rgba(black, .8);
+        }
+    }
+}
+
+/**
+ * @mixin: Card Style
+ *
+ * Add style to card elements
+ */
+@mixin card-style($styles) {
+
+    // Check $styles is a map
+    @if type-of($styles) != 'map' {
+        @error "$styles must be a map.";
+    }
+
+    // Raise (Shadow)
+    @if map-has-key($styles, 'raise') {
+        @if map-get($styles, 'raise') == 'slightly-raised' {
+            box-shadow: .1em .1em .4em rgba(black, .08);
+        } @elseif map-get($styles, 'raise') == 'raised' {
+            box-shadow: .1em .1em .6em rgba(black, .12);
+        } @elseif map-get($styles, 'raise') == 'floating' {
+            box-shadow: .2em .2em 1.2em rgba(black, .15);
+        }
+    }
+
+    // Color Card
+    @if map-has-key($styles, 'background-color') {
+        background-color: map-get($styles, 'background-color');
+        border: none;
+
+        > .title {
+            border-bottom: none;
+            padding-top: 2.4rem;
+
+            + .content {
+                padding-top: 0;
+            }
+        }
+
+        // Text Color
+        @if map-has-key($styles, 'color') {
+            color: map-get($styles, 'color');
+        } @else {
+            color: auto-color(map-get($styles, 'background-color'));
+        }
+    }
+}
+
+.card {
+    @include card;
+
+    &.slightly-raised {
+        @include card-style((
+            raise: slightly-raised
+        ));
+    }
+
+    &.raised {
+        @include card-style((
+            raise: raised
+        ));
+    }
+
+    &.floating {
+        @include card-style((
+            raise: floating
+        ));
+    }
+}

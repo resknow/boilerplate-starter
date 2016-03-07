@@ -1,0 +1,17 @@
+/**
+ * Text Truncate with Ellipsis
+ */
+@mixin truncate($width, $ellipsis: true) {
+
+    @if type-of($width) != 'number' {
+        @warn "@truncate $width must be a valid CSS number";
+    }
+
+    overflow: hidden;
+    width: $width;
+    white-space: nowrap;
+
+    @if $ellipsis {
+        text-overflow: ellipsis;
+    }
+}

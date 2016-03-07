@@ -1,0 +1,8 @@
+<!--[if lt IE <?php echo get('site.ie'); ?>]>
+<div id="browser-warning">
+	<h1>Your browser is out of date</h1>
+	<p>This website has been built for modern browsers, yours is many years out of date and as a result, your experience of this website will be poor.</p>
+	<p>Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> and pop back.</p>
+	<p>Thanks.</p>
+</div>
+<![endif]-->

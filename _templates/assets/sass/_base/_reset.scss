@@ -1,0 +1,92 @@
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 62.5%;
+}
+
+body {
+    color: $black;
+    margin: 0;
+    font-family: $font;
+    font-size: $font-size;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+iframe {
+    border: 0;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: block;
+}
+
+strong {
+    font-weight: bold;
+}
+
+sup {
+    position: relative;
+    top: -.5em;
+    font-size: 65%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+a,
+button {
+    color: inherit;
+    transition: 0.4s;
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+
+    &:hover {
+        color: darken($blue, 10%);
+    }
+}
+
+button {
+    overflow: visible;
+    border: 0;
+    font: inherit;
+    letter-spacing: inherit;
+    background: none;
+    cursor: pointer;
+    -webkit-font-smoothing: inherit;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}

@@ -1,0 +1,81 @@
+/**
+ * Two Column layouts
+ */
+%layout {
+    @include outer-container;
+    padding: 2.8rem;
+
+    .sidebar {
+        margin-top: 2.4rem;
+    }
+
+    @include mq(md) {
+        .sidebar {
+            margin-top: 0;
+        }
+    }
+
+    @include mq(lg) {
+        padding: 4.2rem 0;
+    }
+}
+
+%layout-6-6 {
+    @extend %layout;
+    @include mq(md) {
+
+        main {
+            @include span-columns(6);
+        }
+
+        .sidebar {
+            @include span-columns(6);
+        }
+
+    }
+}
+
+%layout-7-5 {
+    @extend %layout;
+    @include mq(md) {
+
+        main {
+            @include span-columns(7);
+        }
+
+        .sidebar {
+            @include span-columns(5);
+        }
+
+    }
+}
+
+%layout-8-4 {
+    @extend %layout;
+    @include mq(md) {
+
+        main {
+            @include span-columns(8);
+        }
+
+        .sidebar {
+            @include span-columns(4);
+        }
+
+    }
+}
+
+%layout-9-3 {
+    @extend %layout;
+    @include mq(md) {
+
+        main {
+            @include span-columns(9);
+        }
+
+        .sidebar {
+            @include span-columns(3);
+        }
+
+    }
+}

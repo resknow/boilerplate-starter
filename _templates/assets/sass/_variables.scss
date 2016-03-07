@@ -1,0 +1,48 @@
+// Variables
+//
+// Project specific variables and
+// settings.
+
+// Typography
+$font-size:                 1.4em;
+$font-size-rem:             1.4rem;
+$font:                      sans-serif;
+$weight:                    300;
+$heading-font:              $font;
+$heading-font-weight:       400;
+$monospace-font:            "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// Breakpoints
+$bp-xs:             320px;
+$bp-sm:             420px;
+$bp-md:             768px;
+$bp-lg:             980px; // Default
+$bp-xl:             1120px;
+
+// Colours
+$primary:           #222;
+$accent:            #555;
+$blue:              #1b75df;
+$red:               #d4502c;
+$green:             #14b44f;
+$yellow:            #e2cc3b;
+$black:             #323232;
+$dark-grey:         #434343;
+$grey:              #666;
+$light-grey:        #b0b0b0;
+$faded-grey:        #eee;
+$white:             #fff;
+
+// Container Widths
+$container-xs:      42rem;
+$container-sm:      60rem;
+$container-md:      72rem;
+$container-lg:      96rem; // Default
+$container-xl:      112rem;
+
+// Border Radius
+$br:                3px;
+
+// Aspect Ratios for Media Elements
+$ar-16x9:           56.25%;
+$ar-4x3:            75%;

@@ -1,0 +1,189 @@
+/**
+ * Buttons
+ *
+ * Styled buttons.
+ */
+
+/**
+ * @mixin: Button
+ *
+ * Provides the base styles for
+ * a button element and sensible
+ * default colours.
+ */
+@mixin button() {
+    background-color: $white;
+    border-radius: $br;
+    box-sizing: border-box;
+    color: auto-color($white);
+    display: inline-block;
+    font-size: $font-size-rem;
+    line-height: 1;
+    overflow: hidden;
+    padding: .9rem 1.2rem;
+}
+
+/**
+ * @mixin: Button Style
+ *
+ * Customise the button style using
+ * a style type keyword with primary
+ * and accent colours.
+ *
+ * Keywords:
+ * 'default': Solid background and accent colour text.
+ * 'basic': Accent colour border with no background colour and accent colour text.
+ * 'pronounced': Thick (2px) primary colour border with primary colour text.
+ */
+@mixin button-style($primary-color: $white, $accent-color: $grey, $type: default) {
+
+    @if $type == 'default' {
+        background-color: $primary-color;
+        color: $accent-color;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    } @elseif $type == 'basic' {
+        background-color: transparent;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+
+        &:hover {
+            background-color: $primary-color;
+            color: auto-color($primary-color);
+        }
+    } @elseif $type == 'pronounced' {
+        background-color: transparent;
+        border: 2px solid $primary-color;
+        color: $primary-color;
+        font-weight: 600;
+
+        &:hover {
+            background-color: $primary-color;
+            color: auto-color($primary-color);
+        }
+    }
+
+}
+
+/**
+ * @mixin: Button Size
+ *
+ * Set the size of a button element using
+ * keywords.
+ */
+@mixin button-size($size) {
+
+    @if $size == 'xs' {
+        font-size: 1.2rem;
+        padding: .4rem .8rem;
+    } @elseif $size == 'sm' {
+        font-size: 1.3rem;
+        padding: .5rem .9rem;
+    } @elseif $size == 'md' {
+        font-size: $font-size-rem;
+        padding: .9rem 1.2rem;
+    } @elseif $size == 'lg' {
+        font-size: 1.8rem;
+        padding: 1.4rem 2.4rem;
+    } @elseif $size == 'xl' {
+        font-size: 2.1rem;
+        padding: 1.5rem 2.5rem;
+    }
+
+}
+
+/**
+ * @mixin Button Group
+ *
+ * Mixin for creating connected
+ * groups of buttons.
+ */
+@mixin button-group($button-class: 'button') {
+    font-size: 0;
+
+    .#{$button-class} {
+        border-radius: 0;
+
+        &:first-child {
+            border-bottom-left-radius: $br;
+            border-top-left-radius: $br;
+        }
+
+        &:last-child {
+            border-bottom-right-radius: $br;
+            border-top-right-radius: $br;
+        }
+
+        &.basic:not(:last-child),
+        &.pronounced:not(:last-child) {
+            border-right-width: 0;
+        }
+    }
+}
+
+/* Button */
+.button {
+    @include button;
+
+    &.primary {
+        @include button-style($primary, auto-color($primary));
+    }
+
+    &.accent {
+        @include button-style($accent, auto-color($accent));
+    }
+
+    &.blue,
+    &.neutral {
+        @include button-style($blue, auto-color($blue));
+    }
+
+    &.red,
+    &.negative,
+    &.danger,
+    &.error {
+        @include button-style($red, auto-color($red));
+    }
+
+    &.green,
+    &.positive,
+    &.success {
+        @include button-style($green, auto-color($green));
+    }
+
+    &.yellow,
+    &.warning {
+        @include button-style($yellow, auto-color($yellow));
+    }
+
+    &.black {
+        @include button-style($black, auto-color($black));
+    }
+
+    &.dark-grey {
+        @include button-style($dark-grey, auto-color($dark-grey));
+    }
+
+    &.grey {
+        @include button-style($grey, auto-color($grey));
+    }
+
+    &.light-grey {
+        @include button-style($light-grey, auto-color($light-grey));
+    }
+
+    &.faded-grey {
+        @include button-style($faded-grey, auto-color($faded-grey));
+    }
+
+    &.white {
+        @include button-style($white, auto-color($white));
+    }
+}
+
+/* Button Group */
+.button-group {
+    @include button-group;
+}

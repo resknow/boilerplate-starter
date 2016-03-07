@@ -1,0 +1,48 @@
+
+# Site Config
+#
+# You can find all of this information
+# on the CRM.
+url: http://starter.dev
+company: Boilerplate Starter
+phone: 01234 567 890
+email: info@starter.dev
+address: 123 Street Name, Town, County, PO51 4OD
+
+# Include keywords here as they'll
+# be the same throughout the site.
+keywords: keywords, go, here
+
+# Stylesheets
+stylesheets:
+    main-css: /_templates/assets/css/style.css
+    font-awesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css
+
+# Javascript
+scripts:
+    jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js
+    main-js: /_templates/assets/js/main.js
+
+# Internet Explorer Version
+#
+# The version number of the minimum
+# supported IE version
+#
+# Defaults to 11. Anything less and we
+# display a warning.
+# @see http://www.independent.co.uk/life-style/gadgets-and-tech/news/microsoft-ends-support-internet-explorer-version-8-9-10-a6800881.html
+ie: 11
+
+# Environment
+# @NOTE Set this to 'prod' when putting
+# the site live.
+environment: dev
+
+# Theme Config
+#
+# @NOTE: Twig requires the Extras package to be
+# installed.
+twig:
+    enabled: false
+    cache: false
+    ext: .twig

@@ -1,0 +1,117 @@
+form {
+
+    .field {
+        padding: 1rem 0;
+    }
+
+    .description {
+        color: $grey;
+        font-size: .9em;
+    }
+
+}
+
+fieldset {
+    border: 1px solid $faded-grey;
+    border-radius: $br;
+    margin: 1.5rem 0;
+    padding: 1.4rem;
+
+    &:first-of-type {
+        margin-top: 0;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.2em;
+
+    &.required::after {
+        content: "*";
+    }
+
+    &.is-hidden {
+        display: none;
+    }
+
+    abbr {
+        display: none;
+    }
+}
+
+input[type="text"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+select,
+textarea {
+    appearance: none;
+    background-color: $white;
+    border: 1px solid $faded-grey;
+    border-radius: $br;
+    box-sizing: border-box;
+    font-size: $font-size-rem;
+    font-family: $font;
+    padding: .85rem;
+    width: 100%;
+
+    &.is-invalid {
+        border-color: $red;
+    }
+
+    &:hover {
+        border: 1px solid $light-grey;
+    }
+
+    &:focus {
+        appearance: none;
+        border-color: $blue;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: $white;
+    border: 1px solid $faded-grey;
+    border-radius: $br;
+    cursor: pointer;
+    display: inline-block;
+    padding: .65rem;
+
+    &:focus {
+        appearance: none;
+        border-color: $blue;
+        box-shadow: none;
+        outline: none;
+    }
+
+    &:checked {
+        background-color: $primary;
+        border-color: $blue;
+    }
+}
+
+input[type="search"] {
+    appearance: none;
+}
+
+select {
+    appearance: none;
+    background: url('../images/select.png') right no-repeat $white;
+    padding: 0.85rem 1.85rem 0.85rem 0.85rem;
+}
+
+textarea {
+    height: 15rem;
+    resize: vertical;
+}

@@ -1,0 +1,290 @@
+@import "sass-boilerplate";
+
+// Site Header
+// This is the main header.
+.site-header {
+    position: relative;
+
+    // Contact information
+    .contact-info {
+        @include clearfix;
+
+        span {
+            background-color: $faded-grey;
+            box-sizing: border-box;
+            display: block;
+            float: left;
+            padding: 1rem 2.6rem;
+            width: 50%;
+
+            i {
+                margin-right: .4em;
+            }
+
+            &:nth-child(2n) {
+                text-align: right;
+            }
+        }
+    }
+
+    // Logo
+    .logo {
+        display: block;
+        padding: 2.6rem;
+    }
+
+    // Nav toggle button for mobile
+    .nav-toggle {
+        color: $accent;
+        display: block;
+        font-size: 2.4rem;
+        padding: 2.6rem;
+        position: absolute;
+        right: 0;
+        top: 5rem;
+    }
+
+    // In-header navigation
+    .header-nav {
+        display: none;
+    }
+
+    // Breakpoint: Medium
+    @include mq(md) {
+
+        // Container
+        // Make this relative so we can absolutely position
+        // elements within the container.
+        .container {
+            position: relative;
+        }
+
+        // Contact information
+        .contact-info {
+            position: absolute;
+            right: 2.6rem;
+            text-align: right;
+            top: 3.4rem;
+
+            span {
+                background-color: transparent;
+                display: inline-block;
+                float: none;
+                font-size: 1.8rem;
+                padding: 0;
+                margin-left: 2rem;
+                width: auto;
+            }
+        }
+
+        // Hide nav toggle button
+        .nav-toggle {
+            display: none;
+        }
+
+        // Header Nav
+        // Show this for larger devices
+        .header-nav {
+            display: block;
+            position: absolute;
+            right: 2.6rem;
+            bottom: 3rem;
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    display: inline-block;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                a {
+                    display: block;
+                    font-size: 1.5rem;
+                    padding-left: 2.6rem;
+                }
+            }
+        }
+
+    }
+
+    // Breakpoint: Large
+    @include mq(lg) {
+
+        // Contact information
+        .contact-info {
+            right: 0;
+        }
+
+        // Logo
+        .logo {
+            padding: 2.6rem 0;
+        }
+
+        // Navigation
+        .header-nav {
+            right: 0;
+        }
+
+    }
+
+}
+
+// Slider
+.slider {
+
+    // Slide
+    .slide {
+        background-position: center;
+        background-size: cover;
+        height: 28rem;
+        position: relative;
+
+        // Overlay
+        // Allows for background transparency if needed.
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        // Caption
+        .caption {
+            color: $white;
+            padding: 3rem 2.6rem;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+
+            &.center,
+            &.centre {
+                text-align: center;
+            }
+        }
+
+    }
+
+    // Breakpoint: Medium
+    @include mq(md) {
+
+        .slide {
+            height: 36rem;
+
+            .caption {
+
+                p {
+                    max-width: 60%;
+                }
+
+                &.center p,
+                &.centre p {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+            }
+        }
+
+    }
+
+    // Breakpoint: Large
+    @include mq(lg) {
+
+        .slide {
+            height: 42rem;
+
+            .caption {
+
+                p {
+                    max-width: 50%;
+                }
+
+            }
+        }
+
+    }
+}
+
+// Main Content
+.main-content {
+    padding: 2.6rem;
+
+    .sidebar {
+        padding-top: 2.6rem;
+    }
+
+    // Breakpoint: Medium
+    @include mq(lg) {
+        @include clearfix;
+        @include outer-container;
+        padding: 5.6rem 0;
+
+        .main {
+            @include span-columns(8);
+        }
+
+        .sidebar {
+            padding-left: 2rem;
+            padding-top: 0;
+            @include span-columns(4);
+        }
+    }
+}
+
+// Site Footer
+.site-footer {
+    background-color: $faded-grey;
+    color: $dark-grey;
+    font-size: 1.3rem;
+    padding: 2.6rem;
+
+    section {
+        margin-bottom: 2rem;
+
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: .4em;
+        }
+
+        &.nav {
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+        }
+
+        &.designer {
+
+            img {
+                vertical-align: middle;
+                margin: 0 .4em;
+            }
+        }
+    }
+
+    // Breakpoint: Large
+    @include mq(lg) {
+        padding: 4.2rem 0;
+
+        .container {
+            @include outer-container;
+        }
+
+        section {
+            @include span-columns(3);
+            margin-bottom: 0;
+        }
+
+    }
+
+}

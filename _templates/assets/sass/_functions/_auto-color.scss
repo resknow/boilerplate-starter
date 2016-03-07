@@ -1,0 +1,12 @@
+/**
+ * @function Auto Color
+ *
+ * Set color based on background colour
+ */
+@function auto-color($color) {
+    @if (lightness($color) > 60) {
+        @return $black;
+    } @else {
+        @return $white;
+    }
+}

@@ -1,0 +1,27 @@
+/**
+ * States
+ *
+ * Utility classes that describe
+ * the current state of an element.
+ */
+
+/* Is Hidden */
+.is-hidden,
+[hidden] {
+    display: none !important;
+}
+
+/* Is Displayed */
+.is-displayed {
+    display: block !important;
+
+    /* Display inline-block */
+    &.inline-block {
+        display: inline-block !important;
+    }
+
+    /* Display inline */
+    &.inline {
+        display: inline !important;
+    }
+}

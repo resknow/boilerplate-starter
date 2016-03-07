@@ -1,0 +1,39 @@
+/**
+ * Three column layouts
+ */
+%layout-3 {
+    @include outer-container;
+    padding: 2.8rem;
+
+    main,
+    .third-col {
+        margin-top: 2.4rem;
+    }
+
+    @include mq(md) {
+        main,
+        .third-col {
+            margin-top: 0;
+        }
+    }
+
+    @include mq(lg) {
+        padding: 4.2rem 0;
+    }
+}
+
+%layout-3-6-3 {
+    @extend %layout-3;
+    @include mq(md) {
+
+        main {
+            @include span-columns(6);
+        }
+
+        .first-col,
+        .third-col {
+            @include span-columns(3);
+        }
+
+    }
+}

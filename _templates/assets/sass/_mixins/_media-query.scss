@@ -1,0 +1,29 @@
+/**
+ * @mixin: Media Query (MQ)
+ *
+ * Mixin for declaring media
+ * queries.
+ */
+@mixin mq($size, $query: min-width) {
+
+    @if $size == 'xs' {
+        $size: $bp-xs;
+    } @elseif $size == 'sm' {
+        $size: $bp-sm;
+    } @elseif $size == 'md' {
+        $size: $bp-md;
+    } @elseif $size == 'lg' {
+        $size: $bp-lg;
+    } @elseif $size == 'xl' {
+        $size: $bp-xl;
+    }
+
+    @elseif type-of($size) == 'number' {
+        $size: $size;
+    }
+
+    @media (#{$query}: $size) {
+        @content;
+    }
+
+}
